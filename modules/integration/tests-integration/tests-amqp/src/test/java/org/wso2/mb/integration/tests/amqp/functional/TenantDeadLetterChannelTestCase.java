@@ -221,9 +221,9 @@ public class TenantDeadLetterChannelTestCase extends MBIntegrationBaseTest {
         superAdminDlcQueue = andesAdminClient.getDlcQueue();
 
         // Evaluating
-        Assert.assertEquals(tenantUserDlcQueue.getMessageCount(), sendMessageCount,
+        Assert.assertEquals(tenantUserDlcQueue.getPendingMessageCount(), sendMessageCount,
                             "failure on tenant dlc queue path");
-        Assert.assertEquals(superAdminDlcQueue.getMessageCount(), 0,
+        Assert.assertEquals(superAdminDlcQueue.getPendingMessageCount(), 0,
                             "failure on super tenant dlc queue path");
     }
 
@@ -326,9 +326,9 @@ public class TenantDeadLetterChannelTestCase extends MBIntegrationBaseTest {
         Queue superAdminDlcQueue = andesAdminClient.getDlcQueue();
 
         // Evaluating
-        Assert.assertEquals(tenantUserDlcQueue.getMessageCount(), sendMessageCount,
+        Assert.assertEquals(tenantUserDlcQueue.getPendingMessageCount(), sendMessageCount,
                 "failure on tenant dlc durable topic subscription path");
-        Assert.assertEquals(superAdminDlcQueue.getMessageCount(), 0,
+        Assert.assertEquals(superAdminDlcQueue.getPendingMessageCount(), 0,
                 "failure on super tenant dlc durable topic subscription path");
     }
 
