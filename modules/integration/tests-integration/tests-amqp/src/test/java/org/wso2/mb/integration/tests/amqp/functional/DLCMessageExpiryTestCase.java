@@ -178,7 +178,7 @@ public class DLCMessageExpiryTestCase extends MBIntegrationBaseTest {
             AndesAdminServiceBrokerManagerAdminException{
 
         AndesAdminClient andesAdminClient = new AndesAdminClient(backendURL, sessionCookie);
-        long messageCount = andesAdminClient.getDlcQueue().getMessageCount();
+        long messageCount = andesAdminClient.getDlcQueue().getPendingMessageCount();
         return messageCount;
     }
 
